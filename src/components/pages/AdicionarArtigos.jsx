@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
+import { ref, push, set } from 'firebase/database';
+// import { storage } from '../../firebase';
+// import { getDownloadURL, ref as storageRef } from 'firebase/storage';
+import { db } from '../../firebase';
 
 const AdicionarArtigos = () => {
   const [titulo, setTitulo] = useState('');
   const [conteudo, setConteudo] = useState('');
-  const [imagem, setImagem] = useState(null);
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // lógica para enviar dados para o backend
-  }
+
+    try {
+      const artigoRef = push(ref(db, 'artigos'));
+      const novoId = artigoRef.key;
+      await set(ref(db, `artigos/${novoId}`), {
+        id: novoId,
+        titulo,
+        conteudo,        
+      });
+
+      alert('Artigo adicionado com sucesso!');
+      setTitulo('');
+      setConteudo('');      
+    } catch (error) {
+      console.error('Erro ao adicionar artigo: ', error);
+    }
+  };
 
   return (
     <div className="container mt-4">
@@ -21,10 +40,9 @@ const AdicionarArtigos = () => {
         <div className="mb-3">
           <label htmlFor="conteudo" className="form-label">Conteúdo</label>
           <textarea className="form-control" id="conteudo" rows="10" value={conteudo} onChange={(e) => setConteudo(e.target.value)}></textarea>
-        </div>
+        </div>        
         <div className="mb-3">
           <label htmlFor="imagem" className="form-label">Imagem</label>
-          <input type="file" className="form-control" id="imagem" accept="image/*" onChange={(e) => setImagem(e.target.files[0])} />
         </div>
         <button type="submit" className="btn btn-primary">Adicionar</button>
       </form>

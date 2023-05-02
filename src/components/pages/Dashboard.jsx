@@ -38,22 +38,23 @@ const Dashboard = () => {
       <Row>
         <Sidebar sm={2}>
           <Nav className="flex-column">
-            <NavItem
+            <NavItem exact
               to="/dashboard/painel"
-              activeClassName="active"
+              activeclassname="active"
             >
               Painel dos Produtos
             </NavItem>
             
-            <NavItem
+            <NavItem exact
               to="/dashboard/adicionarProdutos"
-              activeClassName="active"
+              activeclassname="active"
             >
               Adicionar Produtos
             </NavItem>
 
 
-            <NavItem to="/dashboard/adicionarArtigos" activeClassName="active">
+            <NavItem exact
+            to="/dashboard/adicionarArtigos" activeclassname="active">
               Adicionar Artigos
             </NavItem>
           </Nav>

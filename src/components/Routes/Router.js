@@ -35,10 +35,9 @@ const Router = () => {
             <Route exact path="adicionarProdutos" element={<AdicionarProdutos />} />
             <Route exact path="painel" element={<Painel />} />
           </Route>
-          <Route exact path="/pageArtigos/:id" element={<PageArtigos />} /> 
+          <Route path="/PageArtigos/:id" element={<PageArtigos />} /> 
         </Routes>
         <Footer />
-
       </BrowserRouter>
     </>
   );

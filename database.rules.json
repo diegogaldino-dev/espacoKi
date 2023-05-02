@@ -1,0 +1,6 @@
+{
+  "rules": {
+    ".read": yt,
+    ".write": false
+  }
+}

@@ -1,30 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { ref, onValue } from 'firebase/database';
+import { db } from '../../firebase';
 
 const Artigos = () => {
-  const id = 1; // substitua pelo id do artigo que você quer linkar
+  const [artigos, setArtigos] = useState([]);
+
+  useEffect(() => {
+    const artigosRef = ref(db, 'artigos');
+    onValue(artigosRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const artigosList = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        setArtigos(artigosList);
+      }
+    });
+  }, []);
 
   return (
     <div className="bg-light p-5">
       <div className="container">
-        <h1>Meu Título</h1>
-        <img src="caminho/para/imagem.jpg" alt="Imagem de destaque" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Sed lobortis vel nisl in fringilla. Morbi lobortis turpis 
-          eget urna fermentum dictum. Integer ultricies enim non dui 
-          ultrices, sit amet scelerisque lectus tincidunt. Fusce 
-          convallis est vitae dolor consequat suscipit. Nullam 
-          fringilla mi sed purus efficitur, id pharetra mi congue.
-        </p>
-        <Link to={`/pageArtigos/${id}`}>
-          <Button variant="primary">Ir para a página de destino</Button>
-        </Link>
+        <h1 className="mb-4">Artigos</h1>
+        <div className="row">
+          {artigos.map((artigo) => (
+            <div key={artigo.id} className="col-md-4 mb-4">
+              <div className="card h-100">
+                <div className="card-body">
+                  <h5 className="card-title">{artigo.titulo}</h5>
+                  <p className="card-text">{artigo.conteudo.substring(0, 50)}...</p>
+                  <Link to={`/PageArtigos/${artigo.id}`} className="btn btn-primary">Ler mais</Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Artigos;
