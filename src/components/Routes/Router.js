@@ -13,6 +13,7 @@ import Dashboard from '../pages/Dashboard';
 import AdicionarArtigos from "../pages/AdicionarArtigos";
 import AdicionarProdutos from "../pages/AdicionarProdutos";
 import Painel from "../pages/Painel";
+import EditarArtigo from '../pages/EditarArtigo';
 
 // Navbar e Footer
 import Navbar from "../Navbar/Navbar";
@@ -36,6 +37,8 @@ const Router = () => {
             <Route exact path="painel" element={<Painel />} />
           </Route>
           <Route path="/PageArtigos/:id" element={<PageArtigos />} /> 
+          <Route path="/EditarArtigo/:id" element={<EditarArtigo />} />
+          
         </Routes>
         <Footer />
       </BrowserRouter>
