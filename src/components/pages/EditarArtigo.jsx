@@ -11,6 +11,8 @@ const EditarArtigo = ({ history }) => {
   const [artigo, setArtigo] = useState(null);
   const [titulo, setTitulo] = useState('');
   const [conteudo, setConteudo] = useState('');
+  const [imagemArtigo, setImagemArtigo] = useState("");
+
 
   useEffect(() => {
     const artigoRef = ref(db, `artigos/${id}`);
@@ -37,6 +39,7 @@ const EditarArtigo = ({ history }) => {
     set(ref(db, `artigos/${id}`), {
       titulo,
       conteudo,
+      imagem: imagemArtigo
     })
       .then(() => {
         alert('Artigo atualizado com sucesso!');
@@ -53,32 +56,36 @@ const EditarArtigo = ({ history }) => {
 
   return (
     <div className='container p-4'>
-      <h1>Editar Artigo</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>Título:</Form.Label>
-          <Form.Control
-            type="text"
-            value={titulo}
-            onChange={handleTituloChange}
-          />
-        </Form.Group>
+    <h1>Editar Artigo</h1>
+    <div className="row">
+      <div className="col-md-6">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Título:</Form.Label>
+            <Form.Control
+              type="text"
+              value={titulo}
+              onChange={handleTituloChange}
+            />
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label>Conteúdo:</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows="6"
-            value={conteudo}
-            onChange={handleConteudoChange}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Conteúdo:</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="6"
+              value={conteudo}
+              onChange={handleConteudoChange}
+            />
+          </Form.Group>
 
-        <Button className='py' variant="primary" type="submit">
-          Atualizar
-        </Button>
-      </Form>
+          <Button className='py' variant="primary" type="submit">
+            Atualizar
+          </Button>
+        </Form>
+      </div>
     </div>
+  </div>
   );
 };
 

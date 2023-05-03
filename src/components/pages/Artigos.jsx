@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ref, onValue } from 'firebase/database';
 import { db } from '../../firebase';
+import { Card } from 'react-bootstrap';
+import parse from "html-react-parser";
+import "react-quill/dist/quill.snow.css";
 
 const Artigos = () => {
   const [artigos, setArtigos] = useState([]);
@@ -28,13 +30,15 @@ const Artigos = () => {
         <div className="row">
           {artigos.map((artigo) => (
             <div key={artigo.id} className="col-md-4 mb-4">
-              <div className="card h-100">
-                <div className="card-body">
-                  <h5 className="card-title">{artigo.titulo}</h5>
-                  <p className="card-text">{artigo.conteudo.substring(0, 50)}...</p>
+              <Card className="h-100">
+                <Card.Img className="img-fluid" variant="top" src={artigo.imagem} alt={artigo.titulo} />
+
+                <Card.Body>
+                  <Card.Title>{artigo.titulo}</Card.Title>
+                  <Card.Text>{artigo.conteudo.substring(0, 50)}...</Card.Text>
                   <Link to={`/PageArtigos/${artigo.id}`} className="btn btn-primary">Ler mais</Link>
-                </div>
-              </div>
+                </Card.Body>
+              </Card>
             </div>
           ))}
         </div>

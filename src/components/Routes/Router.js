@@ -14,6 +14,7 @@ import AdicionarArtigos from "../pages/AdicionarArtigos";
 import AdicionarProdutos from "../pages/AdicionarProdutos";
 import Painel from "../pages/Painel";
 import EditarArtigo from '../pages/EditarArtigo';
+import EditarProduto from '../pages/EditarProduto';
 
 // Navbar e Footer
 import Navbar from "../Navbar/Navbar";
@@ -38,7 +39,7 @@ const Router = () => {
           </Route>
           <Route path="/PageArtigos/:id" element={<PageArtigos />} /> 
           <Route path="/EditarArtigo/:id" element={<EditarArtigo />} />
-          
+          <Route path="/EditarProduto/:id" element={<EditarProduto />} />          
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { db } from '../../firebase';
-import { ref, push, set } from 'firebase/database';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { db } from "../../firebase";
+import { ref, push, set } from "firebase/database";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const AdicionarProdutos = () => {
   const [nomeProduto, setNomeProduto] = useState("");
   const [descricaoProduto, setDescricaoProduto] = useState("");
   const [valorProduto, setValorProduto] = useState("");
   const [categoriaProduto, setCategoriaProduto] = useState("");
+  const [imagemProduto, setImagemProduto] = useState("");
 
   const categorias = [
     { id: 1, nome: "Casa" },
@@ -21,29 +22,30 @@ const AdicionarProdutos = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const produtosRef = push(ref(db, 'produtos'));
+      const produtosRef = push(ref(db, "produtos"));
       const novoId = produtosRef.key;
       await set(ref(db, `produtos/${novoId}`), {
         id: novoId,
         nome: nomeProduto,
         descricao: descricaoProduto,
         valor: valorProduto,
-        categoria: categoriaProduto
+        categoria: categoriaProduto,
+        imagem: imagemProduto,
       });
 
-      alert('Produtos adicionado com sucesso!');
-      setNomeProduto('');
-      setDescricaoProduto('');
-      setValorProduto('');
-      setCategoriaProduto('');
+      alert("Produto adicionado com sucesso!");
+      setNomeProduto("");
+      setDescricaoProduto("");
+      setValorProduto("");
+      setCategoriaProduto("");
     } catch (error) {
-      console.error('Erro ao adicionar Produto: ', error);
+      console.error("Erro ao adicionar produto: ", error);
     }
   };
 
   return (
     <div className="container">
-      <h1 className="text-center my-5">Adicionar Produtos</h1>
+      <h1 className="text-center my-5">Adicionar Produto</h1>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <Form onSubmit={handleSubmit}>
@@ -78,7 +80,9 @@ const AdicionarProdutos = () => {
                 value={categoriaProduto}
                 onChange={(event) => setCategoriaProduto(event.target.value)}
               >
-                <option value="" defaultValue disabled>Selecione uma categoria</option>
+                <option value="" disabled>
+                  Selecione uma categoria
+                </option>
                 {categorias.map((categoria) => (
                   <option key={categoria.id} value={categoria.nome}>
                     {categoria.nome}
@@ -86,6 +90,23 @@ const AdicionarProdutos = () => {
                 ))}
               </Form.Control>
             </Form.Group>
+            <Form.Group className="mb-3" controlId="imagem">
+            <Form.Label>Imagem:</Form.Label>
+            <Form.Control
+              type="file"
+              onChange={(event) => {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                  setImagemProduto(reader.result);
+                };
+              }}
+            />
+            {imagemProduto && (
+              <img src={imagemProduto} alt="Imagem do produto" style={{ maxWidth: "200px", marginTop: "10px" }} />
+            )}
+          </Form.Group>
             <div className="text-center">
               <Button variant="primary" type="submit">Adicionar Produto</Button>
             </div>
