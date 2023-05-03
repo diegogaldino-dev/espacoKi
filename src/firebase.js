@@ -17,6 +17,7 @@ const db = getDatabase(app);
 const firestore = getFirestore(app);
 const storage = getStorage(app);
 const artigosRef = ref(db, 'artigos');
+const produtosRef  = ref(db, 'produtos');
 
 
 export { db, firestore, artigosRef, storage };

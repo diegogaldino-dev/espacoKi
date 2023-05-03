@@ -1,46 +1,38 @@
-import React, { useState } from 'react';
-import { Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
-import teste from '../../img/5.jpg'
-import {StyledCard} from './style'
+import React, { useState, useEffect } from "react";
+import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import { StyledCard } from "./style";
+import { ref, onValue } from 'firebase/database';
+import { db } from '../../firebase';
+
+const numeroWhatsapp = "5511941265438";
+
+const categorias = [
+  {id: 1, nome: "Casa"},
+  {id: 2, nome: "Para elas"},
+  {id: 3, nome: "Para eles"},
+  {id: 4, nome: "Lavabo"},
+  {id: 5, nome: "Banho"},
+];
 
 const Catalogo = () => {
-  const numeroWhatsapp = '5511941265438'; // número do Whatsapp fixo
-
-  const categorias = [
-    { id: 1, nome: 'Casa' },
-    { id: 2, nome: 'Lavabo' },
-    { id: 3, nome: 'Banho' },
-  ];
-
-  const produtos = [
-    {
-      id: 1,
-      nome: 'Produto 1',
-      descricao: 'Descrição do produto 1',
-      imagem: teste,
-      valor: 100.00,
-      categoriaId: 1,
-    },
-    {
-      id: 2,
-      nome: 'Produto 2',
-      descricao: 'Descrição do produto 2',
-      imagem: 'caminho/para/imagem2.jpg',
-      valor: 150.00,
-      categoriaId: 1,
-    },
-    {
-      id: 3,
-      nome: 'Produto 3',
-      descricao: 'Descrição do produto 3',
-      imagem: 'caminho/para/imagem3.jpg',
-      valor: 200.00,
-      categoriaId: 2,
-    },
-    // adicione mais produtos aqui
-  ];
-
+  const [produtos, setProdutos] = useState([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
+
+  useEffect(() => {
+    const produtosRef = ref(db, 'produtos');
+    onValue(produtosRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const produtosList = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        setProdutos(produtosList);
+      }
+    }, (error) => {
+      console.log(error);
+    });
+  }, []);
 
   const handleCategoriaClick = (categoriaId) => {
     setCategoriaSelecionada(categoriaId);
@@ -54,37 +46,53 @@ const Catalogo = () => {
   const produtosFiltrados = categoriaSelecionada ? produtos.filter((produto) => produto.categoriaId === categoriaSelecionada) : produtos;
 
   return (
-    <div className="row">
-      <div className="col-md-3">
-        <ListGroup>
-          {categorias.map((categoria) => (
-            <ListGroupItem key={categoria.id} action onClick={() => handleCategoriaClick(categoria.id)} active={categoria.id === categoriaSelecionada}>
-              {categoria.nome}
-            </ListGroupItem>
-          ))}
-        </ListGroup>
-      </div>
-      <div className="col-md-9">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          {produtosFiltrados.map((produto) => (
-            <div key={produto.id} className="col">
-              <StyledCard>
-                <Card.Img variant="top" src={produto.imagem} />
-                <Card.Body>
-                  <Card.Title>{produto.nome}</Card.Title>
-                  <Card.Text>{produto.descricao}</Card.Text>
-                  <Card.Text>Valor: R${produto.valor.toFixed(2)}</Card.Text>
-                  <Button variant="primary" onClick={() => handleWhatsappClick(produto)}>
-                    Enviar via WhatsApp
-                  </Button>
-                </Card.Body>
-              </StyledCard>
-            </div>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-3 col-md-4 col-sm-12">
+          <ListGroup>
+            {categorias.map(({ id, nome }) => (
+              <ListGroupItem
+                key={id}
+                action
+                onClick={() => handleCategoriaClick(id)}
+                active={id === categoriaSelecionada}
+              >
+                {nome}
+              </ListGroupItem>
+            ))}
+          </ListGroup>
+        </div>
+        <div className="col-lg-9 col-md-8 col-sm-12">
+          {produtosFiltrados.map(({ id, nome, descricao, imagem, valor }) => (
+            <StyledCard key={id}>
+              <Card.Img variant="top" src={imagem} />
+              <Card.Body>
+                <Card.Title>{nome}</Card.Title>
+                <Card.Text>{descricao}</Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">
+                  R$ {parseFloat(valor).toFixed(2)}
+              </small>
+              <Button
+                className="float-right"
+                variant="success"
+                onClick={() => {
+                  const valorNumerico = parseFloat(valor);
+                  handleWhatsappClick({ id, nome, descricao, imagem, valor: valorNumerico })
+                }}
+              >
+                Comprar pelo Whatsapp
+              </Button>
+            </Card.Footer>
+          </StyledCard>
         ))}
+
       </div>
     </div>
-  </div>
-);
+
+    </div>
+  );
 };
 
 export default Catalogo;
