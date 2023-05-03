@@ -3,8 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ref, onValue, remove } from 'firebase/database';
 import { db } from '../../firebase';
-import parse from "html-react-parser";
-import "react-quill/dist/quill.snow.css";
+
 
 const Painel = () => {
   const [artigos, setArtigos] = useState([]);
