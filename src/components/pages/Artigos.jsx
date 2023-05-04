@@ -29,13 +29,13 @@ const Artigos = () => {
         <h1 className="mb-4">Artigos</h1>
         <div className="row">
           {artigos.map((artigo) => (
-            <div key={artigo.id} className="col-md-4 mb-4">
+            <div key={artigo.id} className="col-sm-6 col-md-4 mb-4">
               <Card className="h-100">
-                <Card.Img className="img-fluid" variant="top" src={artigo.imagem} alt={artigo.titulo} />
+                <Card.Img className="img-fluid" variant="top" src={artigo.imagem} alt={artigo.titulo} style={{ objectFit: "cover", height: "200px" }} />
 
                 <Card.Body>
                   <Card.Title>{artigo.titulo}</Card.Title>
-                  <Card.Text>{artigo.conteudo.substring(0, 50)}...</Card.Text>
+                  <Card.Text>{parse(`<span>${artigo.conteudo.substring(0, 50)}...</span>`)}</Card.Text>
                   <Link to={`/PageArtigos/${artigo.id}`} className="btn btn-primary">Ler mais</Link>
                 </Card.Body>
               </Card>
