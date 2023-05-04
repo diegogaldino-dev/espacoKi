@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { ref, onValue } from "firebase/database";
 import { db } from "../../firebase";
 import parse from "html-react-parser";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { BsWhatsapp } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
 import "react-quill/dist/quill.snow.css";
 
 const PageArtigos = () => {
@@ -36,6 +39,11 @@ const PageArtigos = () => {
     window.open(url);
   }
 
+  const handleShareFacebook = () => {
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(artigo.titulo)}`;
+    window.open(url);
+  }
+
   if (erro) {
     return <div>{erro}</div>;
   }
@@ -54,8 +62,10 @@ const PageArtigos = () => {
         </div>
       </div>
       <div className="mt-3">
-        <button className="btn btn-primary me-3" onClick={handleShareInstagram}>Compartilhar via Instagram</button>
-        <button className="btn btn-success" onClick={handleShareWhatsApp}>Compartilhar via WhatsApp</button>
+        <h4>Compartilhar Via</h4>
+        <a onClick={handleShareInstagram}><AiOutlineInstagram /></a>
+        <a onClick={handleShareWhatsApp}><BsWhatsapp /></a>
+        <a onClick={handleShareFacebook}><FaFacebookF /></a>
       </div>
       <a href="/">Voltar para o site</a>
       <a href="/artigos">Voltar para os artigos</a>
