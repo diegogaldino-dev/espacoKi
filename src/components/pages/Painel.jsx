@@ -66,18 +66,18 @@ const Painel = () => {
               <Card.Img className="w-1 h-1" variant="top" src={artigo.imagem} width="200" />
               <h5 className="card-title">{artigo.titulo}</h5>
               <Card.Text>{parse(`${artigo.conteudo.substring(0, 50)}...`)}</Card.Text>
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="btn-group d-flex">
-                  <Link to={`/PageArtigos/${artigo.id}`} className="btn btn-primary btn-block btn-sm me-2">
-                    Ler mais
-                  </Link>
-                  <Link to={`/EditarArtigo/${artigo.id}`} className="btn btn-secondary btn-block btn-sm me-2">
-                    Editar
-                  </Link>
-                  <Button variant="danger" onClick={() => handleDeleteArtigo(artigo.id)} className="btn-block btn-sm">
-                    Excluir
-                  </Button>
-                </div>
+            </div>
+            <div className="card-footer d-flex justify-content-between">
+              <Link to={`/PageArtigos/${artigo.id}`} className="btn btn-primary">
+                Ler mais
+              </Link>
+              <div>
+                <Link to={`/EditarArtigo/${artigo.id}`} className="btn btn-secondary me-2">
+                  Editar
+                </Link>
+                <Button variant="danger" onClick={() => handleDeleteArtigo(artigo.id)}>
+                  Excluir
+                </Button>
               </div>
             </div>
           </div>
@@ -93,31 +93,32 @@ const Painel = () => {
         <div key={produto.id} className="col mb-4">
           <div className="card shadow-sm h-100">
             <div className="card-body">
-              <Card.Img className="w-1 h-1" variant="top" src={produto.imagem} width="200" />
+              <Card.Img className="w-1 h-1" variant="top" src={produto.imagem} width="200"/>
               <h5 className="card-title">{produto.nome}</h5>
               <p className="card-text">{produto.descricao.substring(0, 50)}...</p>
               <h5>Categoria</h5>
               <p className="card-text">{produto.categoria}</p>
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="btn-group d-flex">
-                  <Link to={`/catalogo`} className="btn btn-primary btn-block btn-sm me-2">
-                    Ver
-                  </Link>
-                  <Link to={`/EditarProduto/${produto.id}`} className="btn btn-secondary btn-block btn-sm me-2">
-                    Editar
-                  </Link>
-                  <Button variant="danger" onClick={() => handleDeleteProduto(produto.id)} className="btn-block btn-sm">
-                    Excluir
-                  </Button>
-                </div>
+            </div>
+            <div className="card-footer d-flex justify-content-between">
+              <Link to={`/catalogo`} className="btn btn-primary">
+                Ver
+              </Link>
+              <div>
+                <Link to={`/EditarProduto/${produto.id}`} className="btn btn-secondary me-2">
+                  Editar
+                </Link>
+                <Button variant="danger" onClick={() => handleDeleteProduto(produto.id)}>
+                  Excluir
+                </Button>
               </div>
             </div>
           </div>
         </div>
       ))}
     </div>
-  </div>
+  </div>  
 </div>
+
 
   
 
