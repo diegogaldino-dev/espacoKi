@@ -35,9 +35,21 @@ const PageArtigos = () => {
   }
 
   const handleShareWhatsApp = () => {
-    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${artigo.titulo}\n\n${conteudoFormatado}\n\n${artigo.imagem}`)}`;
-    window.open(url);
-  }
+    const canvas = document.createElement("canvas");
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = artigo.imagem;
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+      const base64Image = canvas.toDataURL("image/jpeg");
+      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${artigo.titulo}\n\n${conteudoFormatado}\n\n${base64Image}`)}`;
+      window.open(url);
+    };
+  };
+  
 
   const handleShareFacebook = () => {
     const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(artigo.titulo)}`;
