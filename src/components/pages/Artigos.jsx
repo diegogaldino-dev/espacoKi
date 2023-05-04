@@ -30,7 +30,7 @@ const Artigos = () => {
         <div className="row">
           {artigos.map((artigo) => (
             <div key={artigo.id} className="col-sm-6 col-md-4 mb-4">
-              <Card className="h-100">
+              <Card className="h-100" style={{ height: "400px" }}>
                 <Card.Img className="img-fluid" variant="top" src={artigo.imagem} alt={artigo.titulo} style={{ objectFit: "cover", height: "200px" }} />
 
                 <Card.Body>

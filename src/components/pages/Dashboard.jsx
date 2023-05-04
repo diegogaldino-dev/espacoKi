@@ -36,30 +36,26 @@ const Dashboard = () => {
   return (
     <DashboardContainer fluid>
       <Row>
-        <Sidebar sm={2}>
+        <Sidebar xs={3} sm={2} md={2} lg={2} xl={2}>
           <Nav className="flex-column">
-            <NavItem exact
-              to="/dashboard/painel"
-              activeclassname="active"
-            >
+            <NavItem exact to="/dashboard/painel" activeclassname="active">
               Painel dos Produtos
             </NavItem>
-            
-            <NavItem exact
+
+            <NavItem
+              exact
               to="/dashboard/adicionarProdutos"
               activeclassname="active"
             >
               Adicionar Produtos
             </NavItem>
 
-
-            <NavItem exact
-            to="/dashboard/adicionarArtigos" activeclassname="active">
+            <NavItem exact to="/dashboard/adicionarArtigos" activeclassname="active">
               Adicionar Artigos
             </NavItem>
           </Nav>
         </Sidebar>
-        <MainContent sm={10}>
+        <MainContent xs={9} sm={10} md={10} lg={10} xl={10}>
           <Outlet />
         </MainContent>
       </Row>
