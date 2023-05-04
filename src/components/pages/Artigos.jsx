@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { ref, onValue } from 'firebase/database';
 import { db } from '../../firebase';
 import { Card } from 'react-bootstrap';
@@ -8,6 +8,8 @@ import "react-quill/dist/quill.snow.css";
 
 const Artigos = () => {
   const [artigos, setArtigos] = useState([]);
+
+  
 
   useEffect(() => {
     const artigosRef = ref(db, 'artigos');
@@ -36,7 +38,8 @@ const Artigos = () => {
                 <Card.Body>
                   <Card.Title>{artigo.titulo}</Card.Title>
                   <Card.Text>{parse(`<span>${artigo.conteudo.substring(0, 50)}...</span>`)}</Card.Text>
-                  <Link to={`/PageArtigos/${artigo.id}`} className="btn btn-primary">Ler mais</Link>
+                  <a href={ `/PageArtigos/${artigo.id}` } className="btn btn-primary">Ler mais</a>
+                  
                 </Card.Body>
               </Card>
             </div>

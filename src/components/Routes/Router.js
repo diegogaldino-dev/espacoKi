@@ -15,6 +15,7 @@ import AdicionarProdutos from "../pages/AdicionarProdutos";
 import Painel from "../pages/Painel";
 import EditarArtigo from '../pages/EditarArtigo';
 import EditarProduto from '../pages/EditarProduto';
+import PageProduto from "../pages/PageProduto";
 
 // Navbar e Footer
 import Navbar from "../Navbar/Navbar";
@@ -32,9 +33,10 @@ const Router = () => {
           <Route exact path="/contato" element={<Contato />} />
           <Route exact path="/artigos" element={<Artigos />} />
           <Route exact path="/catalogo" element={<Catalogo />} />
+          <Route exact path="/pageProduto" element={<PageProduto />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route exact path="adicionarArtigos" element={<AdicionarArtigos />} />
-            <Route exact path="adicionarProdutos" element={<AdicionarProdutos />} />
+            <Route exact path="adicionarProdutos" element={<AdicionarProdutos />} />            
             <Route exact path="painel" element={<Painel />} />
           </Route>
           <Route path="/PageArtigos/:id" element={<PageArtigos />} /> 
