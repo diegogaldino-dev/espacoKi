@@ -3,6 +3,8 @@ import { db } from "../../firebase";
 import { ref, push, set } from "firebase/database";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const AdicionarProdutos = () => {
   const [nomeProduto, setNomeProduto] = useState("");
@@ -10,6 +12,8 @@ const AdicionarProdutos = () => {
   const [valorProduto, setValorProduto] = useState("");
   const [categoriaProduto, setCategoriaProduto] = useState("");
   const [imagemProduto, setImagemProduto] = useState("");
+  
+
 
   const categorias = [
     { id: 1, nome: "Casa" },
@@ -59,11 +63,12 @@ const AdicionarProdutos = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="descricao">
               <Form.Label>Descrição:</Form.Label>
-              <Form.Control
-                as="textarea"
-                value={descricaoProduto}
-                onChange={(event) => setDescricaoProduto(event.target.value)}
-              />
+              <ReactQuill
+            value={descricaoProduto}
+            onChange={(content, delta, source, editor) => {
+              setDescricaoProduto(editor.getHTML());
+            }}
+          />
             </Form.Group>
             <Form.Group className="mb-3" controlId="valor">
               <Form.Label>Valor:</Form.Label>

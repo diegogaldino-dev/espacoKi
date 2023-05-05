@@ -16,34 +16,43 @@ const PageArtigos = () => {
 
   useEffect(() => {
     const artigoRef = ref(db, `artigos/${id}`);
-    onValue(artigoRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        setArtigo(data);
-        setConteudoFormatado(data.conteudo);
-      } else {
-        setErro("Nenhum artigo encontrado para o ID fornecido.");
+    onValue(
+      artigoRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          setArtigo(data);
+          setConteudoFormatado(data.conteudo);
+        } else {
+          setErro("Nenhum artigo encontrado para o ID fornecido.");
+        }
+      },
+      (error) => {
+        setErro(`Ocorreu um erro ao buscar o artigo: ${error.message}`);
       }
-    }, (error) => {
-      setErro(`Ocorreu um erro ao buscar o artigo: ${error.message}`);
-    });
+    );
   }, [id]);
 
   const handleShareInstagram = () => {
-    const url = `https://www.instagram.com/create/reel/?video=${encodeURIComponent(`${artigo.titulo}\n\n${window.location.href}`)}`;
+    const url = `https://www.instagram.com/create/reel/?video=${encodeURIComponent(
+      `${artigo.titulo}\n\n${window.location.href}`
+    )}`;
     window.open(url);
-  }
+  };
 
   const handleShareWhatsApp = () => {
-    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${artigo.titulo}\n\n${window.location.href}`)}`;
+    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+      `${artigo.titulo}\n\n${window.location.href}`
+    )}`;
     window.open(url);
-  }
-  
+  };
 
   const handleShareFacebook = () => {
-    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(artigo.titulo)}`;
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      window.location.href
+    )}&quote=${encodeURIComponent(artigo.titulo)}`;
     window.open(url);
-  }
+  };
 
   if (erro) {
     return <div>{erro}</div>;
@@ -55,21 +64,48 @@ const PageArtigos = () => {
 
   return (
     <div className="container p-5">
-      <div className="row">
-        <div className="col-md-6 offset-md-3 col-lg-8 offset-lg-2">
-          <img src={artigo.imagem} alt="" className="img-fluid" style={{maxWidth: "50%"}} />
-          <h1 className="mt-4">{artigo.titulo}</h1>
+      <div className="row justify-content-center align-items-center mb-5">
+        <div className="col-lg-6">
+          <img src={artigo.imagem} alt="" className="img-fluid rounded" />
+        </div>
+        <div className="col-lg-6">
+          <h1 className="display-4">{artigo.titulo}</h1>
           <div className="mt-4 mb-4">{parse(conteudoFormatado)}</div>
+          <div className="mt-3 d-flex justify-content-between align-items-center">
+            <h5 className="mb-0">Compartilhar Via</h5>
+          </div>
+          <div className="d-flex">
+            <a
+              className="btn btn-social-icon btn-instagram me-2"
+              onClick={handleShareInstagram}
+            >
+              <AiOutlineInstagram />
+            </a>
+            <a
+              className="btn btn-social-icon btn-whatsapp me-2"
+              onClick={handleShareWhatsApp}
+            >
+              <BsWhatsapp />
+            </a>
+            <a
+              className="btn btn-social-icon btn-facebook me-2"
+              onClick={handleShareFacebook}
+            >
+              <FaFacebookF />
+            </a>
+          </div>
+          <div className="rounded p-3 bg-light">
+            <div className="d-flex justify-content-center">
+              <a href="/" className="btn btn-primary me-2">
+                Voltar para o site
+              </a>
+              <a href="/artigos" className="btn btn-secondary">
+                Voltar para os artigos
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mt-3">
-        <h4>Compartilhar Via</h4>
-        <a onClick={handleShareInstagram}><AiOutlineInstagram /></a>
-        <a onClick={handleShareWhatsApp}><BsWhatsapp /></a>
-        <a onClick={handleShareFacebook}><FaFacebookF /></a>
-      </div>
-      <a href="/">Voltar para o site</a>
-      <a href="/artigos">Voltar para os artigos</a>
     </div>
   );
 };
