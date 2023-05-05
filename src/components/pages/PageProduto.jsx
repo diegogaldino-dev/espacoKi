@@ -58,67 +58,74 @@ const PageProduto = () => {
   };
 
   const handleWhatsappClick = (produtos) => {
-    const mensagem = `Olá, gostaria de comprar o produto "${
-      produtos.nome
-    }" - Descrição: "${produtos.descricao}" - Valor: R$${produtos.valor}`;
+    const mensagem = `Olá, gostaria de comprar o produto "${produtos.nome}" - Descrição: "${produtos.descricao}" - Valor: R$${produtos.valor}`;
     window.open(
       `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`
     );
   };
 
   return (
-    <div class="container p-5">
-    <div class="row justify-content-center align-items-center mb-5">
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src={produtos.imagem} alt="" class="img-fluid rounded" />
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-4">{produtos.nome}</h1>
-        <div class="mt-4 mb-4">{parse(produtoFormatado)}</div>
-        <div class="mt-4 mb-4">
-          R$ {produtos.valor && parseFloat(produtos.valor).toFixed(2)}
+    <div className="container p-5">
+      <div className="row justify-content-center align-items-center mb-5">
+        <div className="col-lg-6 mb-4 mb-lg-0">
+          <img src={produtos.imagem} alt="" className="img-fluid rounded" />
         </div>
-        <div class="mt-3 d-flex justify-content-between align-items-center">
-          <h5 class="mb-0">Compartilhar Via</h5>
-        </div>
-        <div class="d-flex">
-          <a
-            class="btn btn-social-icon btn-instagram me-2"
-            onClick={handleShareInstagram}
+        <div className="col-lg-6">
+          <h1 className="display-4">{produtos.nome}</h1>
+          <div
+            className="mt-4 mb-4 col-12 col-lg-6"
+            style={{ wordBreak: "break-all" }}
           >
-            <AiOutlineInstagram />
-          </a>
-          <a
-            class="btn btn-social-icon btn-whatsapp me-2"
-            onClick={handleShareWhatsApp}
-          >
-            <BsWhatsapp />
-          </a>
-          <a
-            class="btn btn-social-icon btn-facebook me-2"
-            onClick={handleShareFacebook}
-          >
-            <FaFacebookF />
-          </a>
-        </div>
-        <div class="rounded p-3 bg-light d-flex align-items-center flex-column flex-md-row">
-          <Button class="me-md-2 mb-2 mb-md-0" variant="success" onClick={handleWhatsappClick}>
-            Comprar
-            <BsWhatsapp />
-          </Button>
-          <div class="d-flex justify-content-center mt-2 mt-md-0">
-            <a href="/" class="btn btn-primary me-2">
-              Voltar para o site
+            {parse(produtoFormatado)}
+          </div>
+
+          <div className="mt-4 mb-4">
+            R$ {produtos.valor && parseFloat(produtos.valor).toFixed(2)}
+          </div>
+          <div className="mt-3 d-flex justify-content-between align-items-center">
+            <h5 className="mb-0">Compartilhar Via</h5>
+          </div>
+          <div className="d-flex">
+            <a
+              className="btn btn-social-icon btn-instagram me-2"
+              onClick={handleShareInstagram}
+            >
+              <AiOutlineInstagram />
             </a>
-            <a href="/Catalogo" class="btn btn-secondary">
-              Voltar aos Catálogos
+            <a
+              className="btn btn-social-icon btn-whatsapp me-2"
+              onClick={handleShareWhatsApp}
+            >
+              <BsWhatsapp />
             </a>
+            <a
+              className="btn btn-social-icon btn-facebook me-2"
+              onClick={handleShareFacebook}
+            >
+              <FaFacebookF />
+            </a>
+          </div>
+          <div className="rounded p-3 bg-light d-flex align-items-center flex-column flex-md-row">
+            <Button
+              className="me-md-2 mb-2 mb-md-0"
+              variant="success"
+              onClick={handleWhatsappClick}
+            >
+              Comprar
+              <BsWhatsapp />
+            </Button>
+            <div class="d-flex justify-content-center mt-2 mt-md-0">
+              <a href="/" className="btn btn-primary me-2">
+                Voltar para o site
+              </a>
+              <a href="/Catalogo" className="btn btn-secondary">
+                Voltar aos Catálogos
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
   );
 };
 
