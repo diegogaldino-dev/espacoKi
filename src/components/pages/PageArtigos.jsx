@@ -30,25 +30,14 @@ const PageArtigos = () => {
   }, [id]);
 
   const handleShareInstagram = () => {
-    const url = `https://www.instagram.com/create/reel/?video=${encodeURIComponent(artigo.imagem)}&caption=${encodeURIComponent(artigo.titulo)}`;
+    const url = `https://www.instagram.com/create/reel/?video=${encodeURIComponent(`${artigo.titulo}\n\n${window.location.href}`)}`;
     window.open(url);
   }
 
   const handleShareWhatsApp = () => {
-    const canvas = document.createElement("canvas");
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.src = artigo.imagem;
-    img.onload = () => {
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0);
-      const base64Image = canvas.toDataURL("image/jpeg");
-      const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${artigo.titulo}\n\n${conteudoFormatado}\n\n${base64Image}`)}`;
-      window.open(url);
-    };
-  };
+    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${artigo.titulo}\n\n${window.location.href}`)}`;
+    window.open(url);
+  }
   
 
   const handleShareFacebook = () => {
