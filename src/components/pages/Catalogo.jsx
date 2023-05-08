@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card, Button, ListGroup, ListGroupItem, Carousel } from "react-bootstrap";
 import { StyledCard } from "./style";
 import { ref, onValue, orderByChild, equalTo } from "firebase/database";
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
 import { TbBrandWhatsapp } from "react-icons/tb";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const numeroWhatsapp = "5511941265438";
 
@@ -27,7 +27,6 @@ const Catalogo = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-
 
   useEffect(() => {
     const produtosRef = ref(db, "produtos");
@@ -71,7 +70,7 @@ const Catalogo = () => {
     : produtos;
 
   return (
-    <div className="container py-5" style={{fontFamily: 'Roboto Slab'}}>
+    <div className="container py-5" style={{ fontFamily: "Roboto Slab" }}>
       <div className="row">
         <div className="col-lg-3 col-md-4 col-sm-12">
           <ListGroup>
@@ -81,8 +80,11 @@ const Catalogo = () => {
                 action
                 onClick={() => handleCategoriaClick(nome)}
                 // active={nome === categoriaSelecionada}
-                style={{ backgroundColor: nome === categoriaSelecionada ? '#608263' : 'white', color: nome === categoriaSelecionada ? '#FFF9F0' : 'black' }}
-
+                style={{
+                  backgroundColor:
+                    nome === categoriaSelecionada ? "#608263" : "white",
+                  color: nome === categoriaSelecionada ? "#FFF9F0" : "black",
+                }}
               >
                 {nome}
               </ListGroupItem>
@@ -94,15 +96,37 @@ const Catalogo = () => {
             {produtosFiltrados.map(({ id, nome, descricao, imagem, valor }) => (
               <div key={id} className="col-lg-4 col-md-6 mb-4">
                 <StyledCard data-aos="flip-right" data-aos-duration="800">
-                  <Card.Img
-                    className="img-fluid"
-                    variant="top"
-                    src={imagem}
-                    style={{ height: "200px", objectFit: "contain" }}
-                  />
+                  <Carousel>
+                    <Carousel.Item>
+                      <img
+                        className="d-block w-100"
+                        src={imagem}
+                        alt="Primeira imagem"
+                        style={{ height: "200px", objectFit: "contain" }}
+                      />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img
+                        className="d-block w-100"
+                        src={imagem}
+                        alt="Segunda imagem"
+                        style={{ height: "200px", objectFit: "contain" }}
+                      />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img
+                        className="d-block w-100"
+                        src={imagem}
+                        alt="Terceira imagem"
+                        style={{ height: "200px", objectFit: "contain" }}
+                      />
+                    </Carousel.Item>
+                  </Carousel>
                   <Card.Body>
                     <Card.Title>{nome}</Card.Title>
-                    <Card.Text>{parse(`<span>${descricao.substring(0, 60)}...</span>`)}</Card.Text>
+                    <Card.Text>
+                      {parse(`<span>${descricao.substring(0, 60)}...</span>`)}
+                    </Card.Text>
                   </Card.Body>
                   <Card.Footer className="d-flex justify-content-between">
                     <div className="align-self-center">
