@@ -12,6 +12,9 @@ const AdicionarProdutos = () => {
   const [valorProduto, setValorProduto] = useState("");
   const [categoriaProduto, setCategoriaProduto] = useState("");
   const [imagemProduto, setImagemProduto] = useState("");
+  const [imagemProduto2, setImagemProduto2] = useState("");
+  const [imagemProduto3, setImagemProduto3] = useState("");
+
   
 
 
@@ -35,6 +38,8 @@ const AdicionarProdutos = () => {
         valor: valorProduto,
         categoria: categoriaProduto,
         imagem: imagemProduto,
+        imagem2: imagemProduto2,
+        imagem3: imagemProduto3,
       });
 
       alert("Produto adicionado com sucesso!");
@@ -110,6 +115,39 @@ const AdicionarProdutos = () => {
             />
             {imagemProduto && (
               <img src={imagemProduto} alt="Imagem do produto" style={{ maxWidth: "200px", marginTop: "10px" }} />
+            )}
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="imagem">
+            <Form.Label>Imagem 2:</Form.Label>
+            <Form.Control
+              type="file"
+              onChange={(event) => {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                  setImagemProduto2(reader.result);
+                };
+              }}
+            />
+            {imagemProduto2 && (
+              <img src={imagemProduto2} alt="Imagem do produto" style={{ maxWidth: "200px", marginTop: "10px" }} />
+            )}
+          </Form.Group><Form.Group className="mb-3" controlId="imagem">
+            <Form.Label>Imagem 3:</Form.Label>
+            <Form.Control
+              type="file"
+              onChange={(event) => {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                  setImagemProduto3(reader.result);
+                };
+              }}
+            />
+            {imagemProduto3 && (
+              <img src={imagemProduto3} alt="Imagem do produto" style={{ maxWidth: "200px", marginTop: "10px" }} />
             )}
           </Form.Group>
             <div className="text-center">

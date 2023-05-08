@@ -93,7 +93,7 @@ const Catalogo = () => {
         </div>
         <div className="col-lg-9 col-md-8 col-sm-12">
           <div className="row">
-            {produtosFiltrados.map(({ id, nome, descricao, imagem, valor }) => (
+            {produtosFiltrados.map(({ id, nome, descricao, imagem, imagem2, imagem3, valor }) => (
               <div key={id} className="col-lg-4 col-md-6 mb-4">
                 <StyledCard data-aos="flip-right" data-aos-duration="800">
                   <Carousel>
@@ -102,23 +102,23 @@ const Catalogo = () => {
                         className="d-block w-100"
                         src={imagem}
                         alt="Primeira imagem"
-                        style={{ height: "200px", objectFit: "contain" }}
+                        style={{ height: "200px", width: "200px" ,objectFit: "contain" }}
                       />
                     </Carousel.Item>
                     <Carousel.Item>
                       <img
                         className="d-block w-100"
-                        src={imagem}
+                        src={imagem2}
                         alt="Segunda imagem"
-                        style={{ height: "200px", objectFit: "contain" }}
+                        style={{ height: "200px", width: "200px", objectFit: "contain" }}
                       />
                     </Carousel.Item>
                     <Carousel.Item>
                       <img
                         className="d-block w-100"
-                        src={imagem}
+                        src={imagem3}
                         alt="Terceira imagem"
-                        style={{ height: "200px", objectFit: "contain" }}
+                        style={{ height: "200px", width: "200px" ,objectFit: "contain" }}
                       />
                     </Carousel.Item>
                   </Carousel>

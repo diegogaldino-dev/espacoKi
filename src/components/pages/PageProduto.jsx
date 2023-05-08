@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Carousel } from "react-bootstrap";
 import { ref, onValue } from "firebase/database";
 import { db } from "../../firebase";
 import parse from "html-react-parser";
@@ -68,7 +68,17 @@ const PageProduto = () => {
     <div className="container p-5">
       <div className="row justify-content-center align-items-center mb-5">
         <div className="col-lg-6 mb-4 mb-lg-0">
-          <img src={produtos.imagem} alt="" className="img-fluid rounded" />
+        <Carousel>
+            <Carousel.Item>
+              <img src={produtos.imagem} alt="" className="img-fluid rounded" style={{ height: "300px", width: "500px" }}/>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img src={produtos.imagem2} alt="" className="img-fluid rounded" style={{ height: "300px", width: "500px" }}/>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img src={produtos.imagem2} alt="" className="img-fluid rounded" style={{ height: "300px", width: "500px" }}/>
+            </Carousel.Item>
+          </Carousel>
         </div>
         <div className="col-lg-6">
           <h1 className="display-4">{produtos.nome}</h1>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ref, onValue, remove } from 'firebase/database';
 import { db } from '../../firebase';
@@ -93,9 +93,19 @@ const Painel = () => {
         <div key={produto.id} className="col mb-4">
           <div className="card shadow-sm h-100">
             <div className="card-body">
-              <Card.Img className="w-1 h-1" variant="top" src={produto.imagem} width="200"/>
+            <Carousel>
+              <Carousel.Item>
+                <Card.Img className="w-1 h-1" variant="top" src={produto.imagem} width="200" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <Card.Img className="w-1 h-1" variant="top" src={produto.imagem2} width="200" />
+              </Carousel.Item>
+              <Carousel.Item>
+                <Card.Img className="w-1 h-1" variant="top" src={produto.imagem3} width="200" />
+              </Carousel.Item>
+            </Carousel>
               <h5 className="card-title">{produto.nome}</h5>
-              <p className="card-text">{produto.descricao.substring(0, 50)}...</p>
+              <p className="card-text">{parse(`(${produto.descricao.substring(0, 50)})...`)}</p>
               <h5>Categoria</h5>
               <p className="card-text">{produto.categoria}</p>
             </div>
