@@ -63,7 +63,7 @@ const PageArtigos = () => {
   }
 
   return (
-    <div className="container p-5">
+    <div className="container p-5" style={{fontFamily: 'Roboto Slab'}}>
       <div className="row justify-content-center align-items-center mb-5">
         <div className="col-lg-6">
           <img src={artigo.imagem} alt="" className="img-fluid rounded" />

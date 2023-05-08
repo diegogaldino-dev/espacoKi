@@ -8,6 +8,9 @@ import { AiFillEye } from "react-icons/ai";
 import { TbBrandWhatsapp } from "react-icons/tb";
 import parse from 'html-react-parser';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const numeroWhatsapp = "5511941265438";
 
 const categorias = [
@@ -21,6 +24,10 @@ const categorias = [
 const Catalogo = () => {
   const [produtos, setProdutos] = useState([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
 
   useEffect(() => {
     const produtosRef = ref(db, "produtos");
@@ -64,7 +71,7 @@ const Catalogo = () => {
     : produtos;
 
   return (
-    <div className="container py-5">
+    <div className="container py-5" style={{fontFamily: 'Roboto Slab'}}>
       <div className="row">
         <div className="col-lg-3 col-md-4 col-sm-12">
           <ListGroup>
@@ -73,7 +80,9 @@ const Catalogo = () => {
                 key={id}
                 action
                 onClick={() => handleCategoriaClick(nome)}
-                active={nome === categoriaSelecionada}
+                // active={nome === categoriaSelecionada}
+                style={{ backgroundColor: nome === categoriaSelecionada ? '#608263' : 'white', color: nome === categoriaSelecionada ? '#FFF9F0' : 'black' }}
+
               >
                 {nome}
               </ListGroupItem>
@@ -84,7 +93,7 @@ const Catalogo = () => {
           <div className="row">
             {produtosFiltrados.map(({ id, nome, descricao, imagem, valor }) => (
               <div key={id} className="col-lg-4 col-md-6 mb-4">
-                <StyledCard>
+                <StyledCard data-aos="flip-right" data-aos-duration="800">
                   <Card.Img
                     className="img-fluid"
                     variant="top"

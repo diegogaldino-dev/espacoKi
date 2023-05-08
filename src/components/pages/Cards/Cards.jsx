@@ -20,7 +20,7 @@ function Cards({name, image, description}) {
         <Card.Text>
           {description}
         </Card.Text>
-        <Button variant="success" onClick={handleAgendar}>Agendar <FaWhatsapp className="ms-2" /></Button>
+        <Button variant="" style={{backgroundColor: '#608263', color:"#fff"}} onClick={handleAgendar}>Agendar <FaWhatsapp className="ms-2" /></Button>
       </Card.Body>
     </Card>
   );
