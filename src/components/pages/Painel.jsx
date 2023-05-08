@@ -55,7 +55,7 @@ const Painel = () => {
   };
 
   return (
-    <div className="bg-light p-5">
+    <div className="bg-light p-5" style={{ fontFamily: "Roboto Slab" }}>
   <div className="container">
     <h1 className="mb-4">Artigos</h1>
     <div className="row row-cols-1 row-cols-md-3 g-3">

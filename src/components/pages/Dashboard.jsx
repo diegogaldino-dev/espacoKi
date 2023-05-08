@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Row, Col, Nav } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,13 +7,9 @@ const DashboardContainer = styled(Container)`
   margin-top: 50px;
 `;
 
-const Sidebar = styled(Col)`
-  background-color: #f8f9fa;
-  min-height: 100vh;
-`;
-
-const MainContent = styled(Col)`
+const MainContent = styled(Container)`
   padding: 20px;
+  margin-top: 100px;
 `;
 
 const NavItem = styled(NavLink)`
@@ -33,11 +29,18 @@ const NavItem = styled(NavLink)`
 `;
 
 const Dashboard = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleNav = () => {
+    setExpanded(!expanded);
+  };
+
   return (
-    <DashboardContainer fluid>
-      <Row>
-        <Sidebar xs={3} sm={2} md={2} lg={2} xl={2}>
-          <Nav className="flex-column">
+    <DashboardContainer style={{ fontFamily: "Roboto Slab" }} fluid>
+      <Navbar expand="lg" variant="light" bg="light">        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleNav} />
+        <Navbar.Collapse id="basic-navbar-nav" className={expanded ? "show" : ""}>
+          <Nav className="mr-auto justify-content-between">
             <NavItem exact to="/dashboard/painel" activeclassname="active">
               Painel dos Produtos
             </NavItem>
@@ -50,15 +53,29 @@ const Dashboard = () => {
               Adicionar Produtos
             </NavItem>
 
-            <NavItem exact to="/dashboard/adicionarArtigos" activeclassname="active">
+            <NavItem
+              exact
+              to="/dashboard/adicionarArtigos"
+              activeclassname="active"
+            >
               Adicionar Artigos
             </NavItem>
+
+            <Nav.Item>
+              <Nav.Link href="/">Voltar para o site</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/Catalogo">Voltar aos Catálogos</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/artigos">Voltar aos Artigos</Nav.Link>
+            </Nav.Item>
           </Nav>
-        </Sidebar>
-        <MainContent xs={9} sm={10} md={10} lg={10} xl={10}>
-          <Outlet />
-        </MainContent>
-      </Row>
+        </Navbar.Collapse>
+      </Navbar>
+      <MainContent>
+        <Outlet />
+      </MainContent>
     </DashboardContainer>
   );
 };
