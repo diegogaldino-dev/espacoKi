@@ -27,8 +27,8 @@ const Contato = ({ src, title }) => {
 
     const texto = `Olá, meu nome é ${nome}. Eu conheci vocês através de ${conheceu} e gostaria de entrar em contato por email: ${email}. Aqui está minha mensagem: ${mensagem}`;
 
-    // const telefone = 5511946438748; // Substitua pelo seu número de telefone
-    const link = `https://api.whatsapp.com/send?phone=${5511946438748}&text=${encodeURIComponent(
+    // const telefone = 5511941265438; // Substitua pelo seu número de telefone
+    const link = `https://api.whatsapp.com/send?phone=${5511941265438}&text=${encodeURIComponent(
       texto
     )}`;
 
