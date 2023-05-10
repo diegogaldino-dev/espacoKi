@@ -19,7 +19,7 @@ function CustomNavbar() {
             <img
               alt="Logo da Ki Terapia"
               src={Logo}
-              style={{ marginTop: '-20px', marginBottom: '-20px' }}
+              style={{ marginTop: '0px', marginBottom: '-20px' }}
               width="90"
               height="90"
               className="d-inline-block align-top"
