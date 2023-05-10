@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledFooter } from "./style";
+import { StyledFooter, FooterText } from "./style";
 
 import Logo from "../../img/logo/img9.svg";
 
@@ -73,9 +73,12 @@ function Footer() {
         </div>
       </div>
 
-      <div className="text-center p-3" style={{ backgroundColor: "#608263" }}>
-        © 2023 My Website
-      </div>
+      <FooterText>
+        Espaço Ki Terapia © 2023 Todos os direitos reservados. Desenvolvido por:{" "}
+        <a href="https://instagram.com/dds_desenvolvimento?igshid=NTc4MTIwNjQ2YQ==">
+          DDS Desenvolvimento
+        </a>
+      </FooterText>
     </StyledFooter>
   );
 }
