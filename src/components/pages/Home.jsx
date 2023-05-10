@@ -53,7 +53,7 @@ function Home() {
             <Item>
               <img
                 src={visao}
-                alt="visão"
+                alt="visão_um olho"
                 data-aos="zoom-in-up"
                 data-aos-duration="800"
               />
