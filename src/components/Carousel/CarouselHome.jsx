@@ -12,9 +12,12 @@ import Imagem3 from '../../img/7.jpg'
 export default function CarouselHome() {
   return (
     <StyledCarousel>
-    <Carousel.Item interval={1000}>
+    <Carousel.Item interval={1500}>
       <div style={{ height: '600px' }}>
-        <img className="d-block w-100" src={Imagem1} alt="First slide" />
+        <img className="d-block w-100" src={Imagem1} alt="Primeiro slide - apresenta uma imagem onde aparece a mão de uma mulher que usar shotrs verde musgo, desfocado junto com um armario atrás. 
+        Em evidencia fica as maos da pessoa de shortr, uma segunda pessoa aparece deitada em uma mesa de massagem a qual fica em evidencia o rosto,
+        parte ombro e peito coberto com uma toalha e com os olho fechados, 
+        a mão em evidencia a direita enconta abaixo do queixo da moça e a mão esquerda encosta no topo da testa" />
       </div>
       <Carousel.Caption>
       <TitleCarousel>
@@ -22,9 +25,10 @@ export default function CarouselHome() {
         </TitleCarousel>
       </Carousel.Caption>
     </Carousel.Item>
-    <Carousel.Item interval={500}>
+    <Carousel.Item interval={1500}>
       <div style={{ height: '600px' }}>
-        <img className="d-block w-100" src={Imagem2} alt="Second slide" />
+        <img className="d-block w-100" src={Imagem2} alt="Segundo slide - apresenta uma imagem de uma pessoa massageando o pe de outra na qual 
+        se evedencia o pe e as maos e parte da roupa, na cor vermelha e detalhes em preto e dourado e parte do braço com o fundo desfocado " />
       </div>
       <Carousel.Caption>
       <TitleCarousel>
@@ -32,9 +36,11 @@ export default function CarouselHome() {
         </TitleCarousel>
       </Carousel.Caption>
     </Carousel.Item>
-    <Carousel.Item>
+    <Carousel.Item interval={1500}>
       <div style={{ height: '600px' }}>
-        <img className="d-block w-100" src={Imagem3} alt="Third slide" />
+        <img className="d-block w-100" src={Imagem3} alt="Terceiro slide - apresenta uma imagem onde aparece duas pessoas dessas duas pessoa uma está 
+        deitada de brusos na mesa de massagem com a cabeça sobre as maos totalmente desfocada. A segunda pessoa com as mãos em maior evidencia manuzei com as maos um vidro 
+        com oleo de tonalidade amarela as roupas que essa pessoa usa são uma blusa branca e uma calça roxa que se encontra descofocada." />
       </div>
       <Carousel.Caption>
         <TitleCarousel>

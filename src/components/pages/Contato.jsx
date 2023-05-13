@@ -11,6 +11,7 @@ import {
 } from "./style";
 import { FaWhatsapp } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
+import emailjs from "emailjs-com";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,6 +20,37 @@ const Contato = ({ src, title }) => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const enviarEmail = (event) => {
+    event.preventDefault();
+
+    const nome = document.getElementsByName("nome_completo")[0].value;
+    const conheceu = document.getElementsByName("como_conheceu")[0].value;
+    const email = document.getElementsByName("email")[0].value;
+    const mensagem = document.getElementsByName("mensagem")[0].value;
+
+    const templateParams = {
+      from_name: nome,
+      como_conheceu: conheceu,
+      user_email: email,
+      message: mensagem,
+    };
+
+    emailjs
+      .send("service_0ghqdeh", "template_yi9csu6", templateParams, "hotlVxaMoaacgZ0Kb")
+      .then((response) => {
+        console.log("E-mail enviado com sucesso!", response.status, response.text);
+        // Limpe o formulário após o envio
+        document.getElementsByName("nome_completo")[0].value = "";
+        document.getElementsByName("como_conheceu")[0].value = "";
+        document.getElementsByName("email")[0].value = "";
+        document.getElementsByName("mensagem")[0].value = "";
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar o e-mail:", error);
+      });
+  };
+
   const enviarWhatsapp = () => {
     const nome = document.getElementsByName("nome_completo")[0].value;
     const conheceu = document.getElementsByName("como_conheceu")[0].value;
@@ -42,10 +74,7 @@ const Contato = ({ src, title }) => {
       </div>
       <Row>
         <Col>
-          <StyledForm
-            action="mailto:contato@espacokiterapias.com.br"
-            method="POST"
-          >
+          <StyledForm>
             <Form.Group>
               <Form.Label>Nome completo</Form.Label>
               <Form.Control
@@ -58,12 +87,12 @@ const Contato = ({ src, title }) => {
             <Form.Group>
               <Form.Label>Como nos conheceu?</Form.Label>
               <Form.Control as="select" name="como_conheceu" required>
-                <option value="" disabled selected hidden>
+                <option value="" disabled defaultValue hidden>
                   Como você nos encontrou?
                 </option>
                 <option value="google">Pesquisa no Google</option>
                 <option value="facebook">Anúncio no Facebook</option>
-                <option value="instragram">Instragram</option>
+                <option value="instagram">Instagram</option>
               </Form.Control>
             </Form.Group>
             <Form.Group>
@@ -86,7 +115,7 @@ const Contato = ({ src, title }) => {
               />
             </Form.Group>
             <Buttons>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" onClick={enviarEmail}>
                 Enviar via email
                 <AiOutlineMail className="ms-2" />
               </Button>{" "}

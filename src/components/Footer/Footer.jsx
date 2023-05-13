@@ -38,7 +38,7 @@ function Footer() {
             <h5 className="text-uppercase mb-0">Social Media</h5>
 
             <ul className="list-unstyled d-flex justify-content-between">
-              <li>
+              {/* <li>
                 <a href="#!" className="text-dark">
                   <FaFacebook />
                 </a>
@@ -52,13 +52,13 @@ function Footer() {
                 <a href="#!" className="text-dark">
                   <FaGoogle />
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="https://www.instagram.com/espacokiterapia/?igshid=YmMyMTA2M2Y%3D" className="text-dark">
                   <FaInstagram />
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#!" className="text-dark">
                   <FaLinkedin />
                 </a>
@@ -67,7 +67,7 @@ function Footer() {
                 <a href="#!" className="text-dark">
                   <FaGithub />
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

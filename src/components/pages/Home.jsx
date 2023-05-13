@@ -37,7 +37,7 @@ function Home() {
             <Item>
               <img
                 src={missao}
-                alt="missão"
+                alt="missão - apresenta uma ilustração de um alvo circular na cor preta, azul e vermelho e uma flecha dentro de um circulo vermlho"
                 data-aos="zoom-in"
                 data-aos-duration="800"
               />
@@ -53,7 +53,7 @@ function Home() {
             <Item>
               <img
                 src={visao}
-                alt="visão_um olho"
+                alt="visão - apresenta uma ilustração de engrenagem na cor azul por cima um olho na cor preta"
                 data-aos="zoom-in-up"
                 data-aos-duration="800"
               />
@@ -69,7 +69,7 @@ function Home() {
             <Item>
               <img
                 src={valores}
-                alt="valores"
+                alt="valores - apresenta uma ilustração de um diamante contornado em preto por dentro azul com brilhos amarelos em cima"
                 data-aos="zoom-in-left"
                 data-aos-duration="800"
               />
@@ -108,6 +108,9 @@ function Home() {
             <Cards
               name="Ventosa Terapia"
               image={Ventosa}
+              alt="O primeiro card apresenta uma imagem na qual aparece partes de duas pessoas uma delas realiza o procedimento e a outra deitada na mesa de massagem, 
+              a pessoa que esta em pé usa um uniforme na cor marsala realiza o prodimento de ventosa teparia no paciente que esta deitado o paciente enta de brusos com 
+              a cabeça virada para esquerda. O piso do chão e de madeira"
               description="A Ventosa Terapia é uma técnica que utiliza copos de vidro ou acrílico para criar sucção na pele, com o objetivo de melhorar a circulação sanguínea e aliviar tensões musculares. Pode ser utilizada em diversas partes do corpo."
             />
           </div>
@@ -116,6 +119,10 @@ function Home() {
             <Cards
               name="Reflexologia Podal"
               image={Reflexologia}
+              alt="No segundo card apresenta uma imagem na qual aparece partes de duas pessoas uma delas realiza o procedimento que esta em mais evidencia na imagem 
+              e a outra com a imagem mais desfocada sentada, somente apacere do joelho para baixo usando uma calça cinza em um sofa com almofadas azuis recebenco o 
+              procedimentos de Reflexologia Podal a outra pessoa que realiza o procedimento na imagem usa uma blusa xadres na cor marrom com detalhes quadriculados em 
+              azul esta com cabelo preso e usa brincos um uma olha branca para secar os pés a cor do piso do chão e cinza."
               description="A Reflexologia Podal é uma técnica que utiliza a pressão em pontos específicos dos pés para estimular diferentes partes do corpo. Acredita-se que essa prática possa ajudar a aliviar dores, reduzir o estresse e melhorar a circulação sanguínea."
             />
           </div>
@@ -124,6 +131,9 @@ function Home() {
             <Cards
               name="Massagem Modeladora"
               image={MassagemSueca}
+              alt="No terceiro card apresenta uma imagem na qual aparece partes de duas pessoas, uma delas e uma mulher que recebe a massagem esta 
+              usando uma toalha listrada preta e branca deitada em uma messa de massagem na cor azul e branca e um travesseiro azul marinho aparece 
+              outros e cabeça ela esta de olho fechado. Aparecendo apenas parte das maos da outra pessoa que realiza o procedimento, se encontra as maos em baixo da nuca."
               description="A Massagem Modeladora é uma técnica que utiliza movimentos intensos e rápidos para atuar na redução de medidas e celulite, além de melhorar a circulação sanguínea e ajudar na eliminação de toxinas."
             />
           </div>

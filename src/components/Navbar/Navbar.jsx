@@ -12,12 +12,12 @@ import { TextLogo, ContainerLogo, CustomNav } from './style';
 
 function CustomNavbar() {
   return (
-    <NavbarBootstrap expand="lg" style={{ backgroundColor: '#608263' }} variant="dark">
+    <NavbarBootstrap expand="lg" style={{ backgroundColor: '#608263' }} variant="dark" alt="Menu">
       <Container>
         <ContainerLogo>
           <NavbarBootstrap.Brand as={Link} to="/">
             <img
-              alt="Logo da Ki Terapia"
+              alt="Logo da Espaço Ki Terapias"
               src={Logo}
               style={{ marginTop: '0px', marginBottom: '-20px' }}
               width="90"
@@ -32,12 +32,12 @@ function CustomNavbar() {
         <NavbarToggle aria-controls="navbar-nav" />
         <NavbarCollapse id="navbar-nav">
           <CustomNav className="me-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/sobre">Sobre</Nav.Link>
-            <Nav.Link as={Link} to="/servicos">Serviços</Nav.Link>
-            <Nav.Link as={Link} to="/contato">Contato</Nav.Link>
-            <Nav.Link as={Link} to="/artigos">Artigos</Nav.Link>
-            <Nav.Link as={Link} to="/catalogo">Catalogo</Nav.Link>
+            <Nav.Link alt="inicio" as={Link} to="/">Home</Nav.Link>
+            <Nav.Link alt="sobre" as={Link} to="/sobre">Sobre</Nav.Link>
+            <Nav.Link alt="serviços" as={Link} to="/servicos">Serviços</Nav.Link>
+            <Nav.Link alt="contato" as={Link} to="/contato">Contato</Nav.Link>
+            <Nav.Link alt="artigos" as={Link} to="/artigos">Artigos</Nav.Link>
+            <Nav.Link alt="catalogo" as={Link} to="/catalogo">Catalogo</Nav.Link>
           </CustomNav>
         </NavbarCollapse>
       </Container>

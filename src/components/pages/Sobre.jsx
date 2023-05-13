@@ -28,7 +28,7 @@ const Sobre = () => {
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-center"
           >
-            <ImageArvore src={Bonsai} alt="" className="img-fluid my-4" />
+            <ImageArvore src={Bonsai} alt="Apresenta uma imagem de um Bonsai" className="img-fluid my-4" />
           </div>
           <div
             className="my-5"
