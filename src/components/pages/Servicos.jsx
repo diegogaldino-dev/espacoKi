@@ -57,9 +57,13 @@ const Servicos = () => {
       title: "Massagem Relaxante",
       description:
         "A massagem relaxante é uma técnica que visa reduzir a tensão e o estresse, proporcionando relaxamento e bem-estar. Ela é realizada com movimentos suaves e ritmados, promovendo o alívio das dores musculares e melhorando a circulação sanguínea.",
-      image1: R1,
+      image1: R1,     
       image2: R2,
       image3: R3,
+      descricaoimg1:"A primeira slide mostra duas pessoas uma delas recebendo o procedimento deitada na maca de massagem de olho fechado e com o corpo coberto com um toalha branca e a pessoa que esta realizando o procedimento esta com uma camisa preta e uma calça marrom claro.",
+      descricaoimg2:"No segundo slide mostra duas pessoas uma delas que esta recebendo o procedimento esta deitada de brusos com os branços acima da cabela a segunda pesseoa esta realizando o procedimento esta massagenado as costa da primeira pessoa cita.",
+      descricaoimg3:" No terceiro slide mostra partes de duas pessoas a que esta recebendo o procedimento esta aparecendo somente as perna a pessoa que esta com uma olha do joelho pra cima branca aparentemente esta de bruso e a que esta realizando o procedimento esta de camiseta branca e esta massageando a parte da paturrilha da perna direita",
+
 
     },
     reflexologiaPodal: {
@@ -69,6 +73,9 @@ const Servicos = () => {
       image1: P1,
       image2: P2,
       image3: P3,
+      descricaoimg1:"A primeira imagem do slide apresenta parte de duas pessoas a que esta recebendo o procedimento estão apenas aparecendo os pes e a pessoa que esta realizando o procedimento estão aparecendo as maos da pessoa fazendo o procedimento na sola do pe direito.",
+      descricaoimg2:"No segundo slide apresenta parte de duas pessoas que na que esta realizando o procedimento com o foco nas mãos esta massageando o pe da pessoa que esta recebendo, a que esta recebendo o procedimento mostra em foco nos pes esta recebendo a o procedimento nos pes",
+      descricaoimg3:"No terceiro slide apresenta parte de duas pessoas a que esta recebendo o procedimento mostra os pés que estão em cima de uma toalha branca e esta recebendo o procedimento, a pessoa que esta aplicando o procedimento esta fazendo o procedimento nos dois pes da pessoa e ela esta com as unhas pintadas de uma cor cinzentada",
     },
     kanrenbui: {
       title: "Kanrenbui",
@@ -77,6 +84,9 @@ const Servicos = () => {
       image1: K1,
       image2: K2,
       image3: K3,
+      descricaoimg1:"A primeira imagem do slide aparecem parte de duas pessoas, uma esta com o pe esquerdo virado recendo o procedimento, a pessoa que esta realizando o procedimento esta com um instrumento de mandeira rolando pela a lateral do pe da primeira pessoa",
+      descricaoimg2:"No segundo slide aparecem parte de duas pessoa a que esta realizando o procedimento esta aparecendo as duas mãos dela fazendo o procedimento nas solas do pe direito da pessoa, a pessoa que esta recebendo o procedimento esta de bruso com o foco nos pes e esta recebendo o procedimento no pe direito dela.",
+      descricaoimg3:"No terceiro slide aparece parte de duas pessoas a pessoa que esta recebendo o procedimento esta de bruso e esta com o foco no pe esquedo da pessoa, a pessoa que esta realizando o procedimento esta mostrando as mãos e um equipamento cilindrico de madeira fazendo pressão na sola do pe da pessoa que esta recebendo o procedimento.",
 
     },
     massagemModeladora: {
@@ -86,6 +96,9 @@ const Servicos = () => {
       image1: M1,
       image2: M2,
       image3: M3,
+      descricaoimg1:"A primeira imagem do slide apresenta partes do corpo de duas pessoas uma massageando a outra na parte superior esquerda desfocado aparecem uma mesa com velas. Em evidencia aparece as mãos do massagista nas cortas de uma moça que esta deitada de brusos com um toalha de baixo da cabeça de olhos fechados, na mesa de massagem se encontra dois vidro de tampa preta com detalhes verde e vermelho ",
+      descricaoimg2:"No segundo slide aparecem partes do corpo de duas pessoas uma  delas esta a direita so aparecem os braços massagendo as cortas de uma mulher que esta deitada de brusos com a cabeça em cima das mãos",
+      descricaoimg3:"No terceiro slide aparecem partes do corpo de duas pessoas sendo elas mulheres a que esta fazendo a massagem so aparece os dois braços e parte da blusa verde disfocada atras dela desfocado tambem do lado esquerdo uma mesa onde estão acesas tres velas tambem desfocado em evidencia em uma mesa coberta com uma toalha branca esta a mulher que esta recebendo o procedimento deitada em cima de uma das mãos ela recebe a massagem tambem temos cinco flores intercaladas de cores brancas e verde",
 
     },
     drenagem: {
@@ -95,6 +108,9 @@ const Servicos = () => {
       image1: D1,
       image2: D2,
       image3: D3,
+      descricaoimg1:"A primeira imagem do slide ela tem um fundo branco encotra-se uma pessoa em uma mesa de massagem coberta com toalha ou lençol branco uma mulher deitada de bruso com a cabeça sobre as mãos recebendo o procedimento de uma outra pessoa que realiza o procedimento vente uma camiseta cinza e uma calça azul escuro",
+      descricaoimg2:"No segundo slide apresenta duas pessoas com um fundo totalmente branco com a mesa de massagem coberta com toalha ou lençol branco uma mulher deitada de bruso com a cabeça sobre as mãos recebendo o procedimento de uma outra pessoa que realiza o procedimento vente uma camiseta cinza e uma calça azul escuro.",
+      descricaoimg3:"No terceiro slide apresenta partes de dois corpos uma pessoa recebe o procedimento aparentemente a pessoa se encontra de brusos com as pernas com oleo, em evidencia a pessoa que esta recebendo o procedimento so aparece apenas partes das pernas e a pessoa esta deitada de brusos se encotra recebendo o procedimento na parte da panturilha a mesa e coberta com um lençol branco no fundo se encotra desfocado um armario com varios utencilhos de massagem",
 
     },
     ventosaTerapia: {
@@ -104,6 +120,9 @@ const Servicos = () => {
       image1: V1,
       image2: V2,
       image3: V3,
+      descricaoimg1:"A primeira imagem do apresenta uma mulher deitada em cima de uma mesa coberta de toalha branca um almofada branca ela esta deita sobre as mão aparentemete com os olhos fechados com os copos da ventosa terapias com uma toalha branca cobrindo da cintura para baixo e existe algumas decorações nas mesas que estão desfocadas",
+      descricaoimg2:"Na segunda imagem do slide apresenta uma pessoa de brusos que não aparece a cabeça somente a parte das costas e uma mão de uma segunda pessoa toda de branco com uma blusa preta por baixo a pessoa possue aonde verifica os pontos que foram feitos a ventosa terapia",
+      descricaoimg3:"Na terceira imagem do slide apresenta de um angulo visto de cima aonde tem uma mesa do lado direito de madeira com oleos e velas e sais e outras decorações do lado esquerdo uma mulher que recebe o procedimento de ventosa terapias que esta com cinco copos em suas cortas e o sexto esta sendo aplicado por uma mão que esta sendo colocado do lado esquedo esta deitada de brusos com a cabeça em cima das mãos aparentemente esta de olhos fechados.",
 
     },
     laserterapia: {
@@ -113,6 +132,9 @@ const Servicos = () => {
       image1: L1,
       image2: L2,
       image3: L3,
+      descricaoimg1:"A primeira imagem do slide apresenta aparentemente sentada aonde recebe o procedimento de laserterapia no joelho somente aparece parte de mãos e dedos da pessoa que aplica a laserterapia.",
+      descricaoimg2:"No segundo slide apresenta parte de dois corpos um esta deitado de brusos recebendo o procedimento de laserterapia, a outra pessoa aparece somente a mão direita com o laiser apontando para as costas e fazendo o procedimento",
+      descricaoimg3:"No terceiro slide aparecenta uma imagem com duas pessoas com partes dos seus corpos uma pessoa esta deitada em uma mesa coberta com lençol ou toalha branca desfocado esta suas pernas em evidencia as mãos de ambas as pessoas esta recebendo o procedimento na mão esquerda e com o laser apontado nas mãos a segunda pessoa segura com a mão direita o laser e a esquerda a mão de quem esta recebendo o procedimento",
 
     },
     reiki: {
@@ -122,6 +144,9 @@ const Servicos = () => {
       image1: A1,
       image2: A2,
       image3: A3,
+      descricaoimg1:"A primeira imagem do ",
+      descricaoimg2:"",
+      descricaoimg3:"",
 
     },
   };
@@ -142,21 +167,21 @@ const Servicos = () => {
               <img
                 className="d-block w-100"
                 src={servico.image1}
-                alt="First slide"
+                alt={servico.descricaoimg1}
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
                 src={servico.image2}
-                alt="Second slide"
+                alt={servico.descricaoimg2}
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
                 className="d-block w-100"
                 src={servico.image3}
-                alt="Third slide"
+                alt={servico.descricaoimg3}
               />
             </Carousel.Item>
           </Carousel>
