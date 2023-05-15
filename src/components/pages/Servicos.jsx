@@ -144,9 +144,9 @@ const Servicos = () => {
       image1: A1,
       image2: A2,
       image3: A3,
-      descricaoimg1:"A primeira imagem do ",
-      descricaoimg2:"",
-      descricaoimg3:"",
+      descricaoimg1:"A primeira imagem do slide apresenta um fundo desfocado branco e parte de duas pessoas uma esta deitada em uma travesseiro branco e aparece parte da blusa cinza e uma mulher aparentemente de olhos fechados a outra pessoa que aparece esta vestidas toda de branco e so evendencia suas mãos e parte das roupas um movimentos de reike.",
+      descricaoimg2:"No segundo slide apresenta parte dos corpos de duas pessoas uma pessoa esta deitada em uma mesa coberta com toalhas brancas e coberta tambem com um lençol branco somente aparece a cabeça a pessoa esta encostada em um travesseiro branco e uma mulher que esta de olhos fechados a outra pessoa que realiza o procedimento veste roupas brancas e so aparece as mãos em evidencias e o fundo desfocado a cor da parede desfocada e laranja e esta com as mãos proximo a cabeça realizando o procedimento de Reiki.",
+      descricaoimg3:"No terceiro slide apresenta aparentemente a imagem foi tirado ao ar livre com o fundo desfocado aonde aparece plantas verdinhas e uma arvore encontra uma pessoa deitada usando roupas brancas a pessoa que esta deitada ao lado dessa pessoa aparece vestida de branco realizando na parte abdominal da paciente a reiki terapia.",
 
     },
   };
