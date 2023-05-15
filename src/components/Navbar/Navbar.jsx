@@ -38,6 +38,8 @@ function CustomNavbar() {
             <Nav.Link alt="contato" as={Link} to="/contato">Contato</Nav.Link>
             <Nav.Link alt="artigos" as={Link} to="/artigos">Artigos</Nav.Link>
             <Nav.Link alt="catalogo" as={Link} to="/catalogo">Catalogo</Nav.Link>
+            <Nav.Link alt="dashboard" as={Link} to="/dashboard"></Nav.Link>
+
           </CustomNav>
         </NavbarCollapse>
       </Container>
