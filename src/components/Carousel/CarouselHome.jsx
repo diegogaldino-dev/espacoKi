@@ -14,10 +14,7 @@ export default function CarouselHome() {
     <StyledCarousel>
     <Carousel.Item interval={1500}>
       <div style={{ height: '600px' }}>
-        <img className="d-block w-100" src={Imagem1} alt="Primeiro slide - apresenta uma imagem onde aparece a mão de uma mulher que usar shotrs verde musgo, desfocado junto com um armario atrás. 
-        Em evidencia fica as maos da pessoa de shortr, uma segunda pessoa aparece deitada em uma mesa de massagem a qual fica em evidencia o rosto,
-        parte ombro e peito coberto com uma toalha e com os olho fechados, 
-        a mão em evidencia a direita enconta abaixo do queixo da moça e a mão esquerda encosta no topo da testa" />
+        <img className="d-block w-100" src={Imagem1} alt="No primeiro slide, uma imagem mostra a mão de uma mulher vestindo shorts verde musgo, em primeiro plano, desfocada junto com um armário ao fundo. Em destaque, aparecem as mãos da pessoa de shorts, enquanto uma segunda pessoa está deitada em uma mesa de massagem. O rosto da pessoa deitada é evidenciado, assim como parte do ombro e do peito, que estão cobertos por uma toalha. Os olhos da pessoa estão fechados. A mão direita da mulher em destaque encontra-se abaixo do queixo da outra pessoa, enquanto a mão esquerda toca o topo da testa." />
       </div>
       <Carousel.Caption>
       <TitleCarousel>
@@ -27,8 +24,7 @@ export default function CarouselHome() {
     </Carousel.Item>
     <Carousel.Item interval={1500}>
       <div style={{ height: '600px' }}>
-        <img className="d-block w-100" src={Imagem2} alt="Segundo slide - apresenta uma imagem de uma pessoa massageando o pe de outra na qual 
-        se evedencia o pe e as maos e parte da roupa, na cor vermelha e detalhes em preto e dourado e parte do braço com o fundo desfocado " />
+        <img className="d-block w-100" src={Imagem2} alt="No segundo slide, há uma imagem que retrata uma pessoa massageando o pé de outra. O foco está no pé e nas mãos em destaque, bem como em partes da roupa que são predominantemente vermelhas, com detalhes em preto e dourado. Também é possível ver parte do braço da pessoa que está massageando. O fundo da imagem está desfocado, dando ênfase ao ato da massagem." />
       </div>
       <Carousel.Caption>
       <TitleCarousel>
@@ -38,9 +34,7 @@ export default function CarouselHome() {
     </Carousel.Item>
     <Carousel.Item interval={1500}>
       <div style={{ height: '600px' }}>
-        <img className="d-block w-100" src={Imagem3} alt="Terceiro slide - apresenta uma imagem onde aparece duas pessoas dessas duas pessoa uma está 
-        deitada de brusos na mesa de massagem com a cabeça sobre as maos totalmente desfocada. A segunda pessoa com as mãos em maior evidencia manuzei com as maos um vidro 
-        com oleo de tonalidade amarela as roupas que essa pessoa usa são uma blusa branca e uma calça roxa que se encontra descofocada." />
+        <img className="d-block w-100" src={Imagem3} alt="No terceiro slide, é exibida uma imagem com duas pessoas. A primeira pessoa está deitada de bruços na mesa de massagem, com a cabeça apoiada nas mãos, que estão totalmente desfocadas. A segunda pessoa é evidenciada com as mãos em destaque, segurando um frasco de óleo de cor amarela. A pessoa que segura o frasco está vestindo uma blusa branca e calças roxas, que estão desfocadas na imagem." />
       </div>
       <Carousel.Caption>
         <TitleCarousel>

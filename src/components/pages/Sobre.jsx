@@ -28,7 +28,7 @@ const Sobre = () => {
             data-aos="fade-up"
             data-aos-anchor-placement="bottom-center"
           >
-            <ImageArvore src={Bonsai} alt="Apresenta uma imagem de um Bonsai" className="img-fluid my-4" />
+            <ImageArvore src={Bonsai} alt="Apresenta uma imagem de um Bonsai, que é uma árvore em miniatura cultivada em um vaso. O Bonsai é conhecido por sua forma artística e pela técnica de poda e modelagem aplicada para manter seu tamanho reduzido. A imagem mostra a delicadeza e a beleza dessa árvore em miniatura, com seus galhos e folhas cuidadosamente projetados para criar uma representação em escala reduzida de uma árvore de tamanho natural." className="img-fluid my-4" />
           </div>
           <div
             className="my-5"
