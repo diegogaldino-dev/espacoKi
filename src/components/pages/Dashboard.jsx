@@ -61,7 +61,7 @@ const Dashboard = () => {
               Adicionar Artigos
             </NavItem>
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link href="/">Voltar para o site</Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -69,7 +69,7 @@ const Dashboard = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/artigos">Voltar aos Artigos</Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -38,14 +38,14 @@ const PageProduto = () => {
 
   const handleShareInstagram = () => {
     const url = `https://www.instagram.com/create/reel/?video=${encodeURIComponent(
-      `${produtos.nome}\n\n\nR$${produtos.valor}\n${window.location.href}`
+      `${produtos.nome}\n\n\n R$${produtos.valor}\n${window.location.href}`
     )}`;
     window.open(url);
   };
 
   const handleShareWhatsApp = () => {
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-      `${produtos.nome}\n\n\nR$${produtos.valor}${window.location.href}`
+      `${produtos.nome}\n\n\n R$${produtos.valor}${window.location.href}`
     )}`;
     window.open(url);
   };
@@ -121,17 +121,17 @@ const PageProduto = () => {
               variant="success"
               onClick={handleWhatsappClick}
             >
-              Comprar
+              Comprar Agora
               <BsWhatsapp />
             </Button>
-            <div class="d-flex justify-content-center mt-2 mt-md-0">
+            {/* <div class="d-flex justify-content-center mt-2 mt-md-0">
               <a href="/" className="btn btn-primary me-2">
                 Voltar para o site
               </a>
               <a href="/Catalogo" className="btn btn-secondary">
                 Voltar aos Catálogos
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

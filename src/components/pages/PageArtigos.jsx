@@ -35,14 +35,14 @@ const PageArtigos = () => {
 
   const handleShareInstagram = () => {
     const url = `https://www.instagram.com/create/reel/?video=${encodeURIComponent(
-      `${artigo.titulo}\n\n${window.location.href}`
+      `${artigo.titulo}\n\n ${window.location.href}`
     )}`;
     window.open(url);
   };
 
   const handleShareWhatsApp = () => {
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-      `${artigo.titulo}\n\n${window.location.href}`
+      `${artigo.titulo}\n\n ${window.location.href}`
     )}`;
     window.open(url);
   };
@@ -94,7 +94,7 @@ const PageArtigos = () => {
               <FaFacebookF />
             </a>
           </div>
-          <div className="rounded p-3 bg-light">
+          {/* <div className="rounded p-3 bg-light">
             <div className="d-flex justify-content-center">
               <a href="/" className="btn btn-primary me-2">
                 Voltar para o site
@@ -103,7 +103,7 @@ const PageArtigos = () => {
                 Voltar para os artigos
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
