@@ -33,7 +33,7 @@ export const Text = styled.span`
 export const Description = styled.span `
   font-family: 'Hind Madurai', sans-serif;
   margin-top: 5px;
-  word-break: break-all;
+  word-wrap: break-word;
 `
 
 
