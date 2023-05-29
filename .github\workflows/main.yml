@@ -17,4 +17,4 @@ jobs:
       server: ftp@espacokiterapias.com.br
       username: espa0924
       password: ${{ secrets.cpanel_password }}
-      server-dir: public_html
+      server-dir: public_html/
