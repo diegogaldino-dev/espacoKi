@@ -14,7 +14,7 @@ jobs:
   - name: 📂 Sync files
     uses: SamKirkland/FTP-Deploy-Action@v4.3.4
     with:
-      server: br1120.hostgator.com.br
+      server: ftp@espacokiterapias.com.br
       username: espa0924
       password: ${{ secrets.cpanel_password }}
       server-dir: public_html
