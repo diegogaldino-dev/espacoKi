@@ -5,12 +5,9 @@ import { StyledFooter, FooterText } from "./style";
 import Logo from "../../img/logo/img9.svg";
 
 import {
-  FaFacebook,
-  FaTwitter,
-  FaGoogle,
+ 
   FaInstagram,
-  FaLinkedin,
-  FaGithub,
+ 
 } from "react-icons/fa";
 
 function Footer() {

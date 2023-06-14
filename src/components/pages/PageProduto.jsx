@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Button, Carousel } from "react-bootstrap";
 import { ref, onValue } from "firebase/database";
 import { db } from "../../firebase";
@@ -37,10 +37,9 @@ const PageProduto = () => {
   }, [id]);
 
   const handleShareInstagram = () => {
-    const url = `https://www.instagram.com/create/reel/?video=${encodeURIComponent(
-      `${produtos.nome}\n\n\n R$${produtos.valor}\n${window.location.href}`
-    )}`;
-    window.open(url);
+    const conteudoCompartilhado = `${produtos.nome}\n\n\n R$${produtos.valor}${window.location.href}`;
+  const url = `https://www.instagram.com/create?caption=${encodeURIComponent(conteudoCompartilhado)}`;
+  window.open(url);
   };
 
   const handleShareWhatsApp = () => {
@@ -68,15 +67,15 @@ const PageProduto = () => {
     <div className="container p-5">
       <div className="row justify-content-center align-items-center mb-5">
         <div className="col-lg-6 mb-4 mb-lg-0">
-        <Carousel>
+        <Carousel className="object-fit-cover">
             <Carousel.Item>
-              <img src={produtos.imagem} alt="" className="img-fluid rounded" style={{ height: "300px", width: "500px" }}/>
+              <img src={produtos.imagem} alt="" className="img-fluid rounded object-fit-cover" style={{ height: "300px", width: "500px", objectFit: "contain" }}/>
             </Carousel.Item>
             <Carousel.Item>
-              <img src={produtos.imagem2} alt="" className="img-fluid rounded" style={{ height: "300px", width: "500px" }}/>
+              <img src={produtos.imagem2} alt="" className="img-fluid rounded object-fit-cover" style={{ height: "300px", width: "500px", objectFit: "contain" }}/>
             </Carousel.Item>
             <Carousel.Item>
-              <img src={produtos.imagem2} alt="" className="img-fluid rounded" style={{ height: "300px", width: "500px" }}/>
+              <img src={produtos.imagem2} alt="" className="img-fluid rounded object-fit-cover" style={{ height: "300px", width: "500px", objectFit: "contain" }}/>
             </Carousel.Item>
           </Carousel>
         </div>
@@ -96,34 +95,34 @@ const PageProduto = () => {
             <h5 className="mb-0">Compartilhar Via</h5>
           </div>
           <div className="d-flex">
-            <a
+            {/* <a
               className="btn btn-social-icon btn-instagram me-2"
               onClick={handleShareInstagram}
             >
               <AiOutlineInstagram />
-            </a>
+            </a> */}
             <a
               className="btn btn-social-icon btn-whatsapp me-2"
               onClick={handleShareWhatsApp}
             >
               <BsWhatsapp />
             </a>
-            <a
+            {/* <a
               className="btn btn-social-icon btn-facebook me-2"
               onClick={handleShareFacebook}
             >
               <FaFacebookF />
-            </a>
+            </a> */}
           </div>
           <div className="rounded p-3 bg-light d-flex align-items-center flex-column flex-md-row">
-            <Button
+            {/* <Button
               className="me-md-2 mb-2 mb-md-0"
               variant="success"
               onClick={handleWhatsappClick}
             >
               Comprar Agora
               <BsWhatsapp />
-            </Button>
+            </Button> */}
             {/* <div class="d-flex justify-content-center mt-2 mt-md-0">
               <a href="/" className="btn btn-primary me-2">
                 Voltar para o site

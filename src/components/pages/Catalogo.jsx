@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, ListGroup, ListGroupItem, Carousel } from "react-bootstrap";
 import { StyledCard } from "./style";
-import { ref, onValue, orderByChild, equalTo } from "firebase/database";
+import { ref, onValue,} from "firebase/database";
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";

@@ -66,7 +66,7 @@ const PageArtigos = () => {
     <div className="container p-5" style={{fontFamily: 'Roboto Slab'}}>
       <div className="row justify-content-center align-items-center mb-5">
         <div className="col-lg-6">
-          <img src={artigo.imagem} alt="" className="img-fluid rounded" />
+          <img src={artigo.imagem} alt="" className="img-fluid rounded object-fit-cover" />
         </div>
         <div className="col-lg-6">
           <h1 className="display-4">{artigo.titulo}</h1>
@@ -75,24 +75,24 @@ const PageArtigos = () => {
             <h5 className="mb-0">Compartilhar Via</h5>
           </div>
           <div className="d-flex">
-            <a
+            {/* <a
               className="btn btn-social-icon btn-instagram me-2"
               onClick={handleShareInstagram}
             >
               <AiOutlineInstagram />
-            </a>
+            </a> */}
             <a
               className="btn btn-social-icon btn-whatsapp me-2"
               onClick={handleShareWhatsApp}
             >
               <BsWhatsapp />
             </a>
-            <a
+            {/* <a
               className="btn btn-social-icon btn-facebook me-2"
               onClick={handleShareFacebook}
             >
               <FaFacebookF />
-            </a>
+            </a> */}
           </div>
           {/* <div className="rounded p-3 bg-light">
             <div className="d-flex justify-content-center">

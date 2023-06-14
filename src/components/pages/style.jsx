@@ -206,4 +206,3 @@ export const TitleCarousel = styled.span `
 export const ImgMVV = styled.img `
   max-width:  60px;
 `
-
